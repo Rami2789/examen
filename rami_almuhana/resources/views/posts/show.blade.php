@@ -15,6 +15,7 @@
                 <p class="opacity-70 ml-8">
                 <strong>Updated at: </strong> {{ $post->updated_at->diffForHumans() }}
                 </p>
+                <a href="{{ route('posts.edit', $post) }}" class="btn-link ml-auto">Edit Post</a>
             </div>
 
 
