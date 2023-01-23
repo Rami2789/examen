@@ -41,7 +41,18 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required|max:120',
             'text' => 'required'
-        ]);        
+        ]);
+        
+        $post = new Post([              //nieuw object aan maken van Post model
+            'user_id' => Auth::id(),    //id van de huidige user in user_id zetten
+            'author' => $request->title, //author (request) in author zetten
+            'title' => $request->title, //title (request) in title zetten
+            'text' => $request->text    //text (request) in text zetten
+        ]);
+        $post->save();                  //het object opslaan en dus de rij opslaan in de tabel
+        
+        return to_route('posts.index'); //redirect naar de route posts.index
+        
     }
 
     /**
