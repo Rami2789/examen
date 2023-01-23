@@ -12,9 +12,9 @@
 
 <form action="{{ route('posts.store') }}" method="post">
     @csrf
-    <x-input type="text" name="text" field="author" placeholder="Name" class="w-full mb-6"></x-input>
+    <x-input type="text" name="text" field="title" placeholder="Name" class="w-full" autocomplete="off"></x-input>
 
-    <x-input type="text" name="title" field="title" placeholder="Title" class="w-full" autocomplete="off"></x-input>
+    <x-input type="text" name="title" field="title" placeholder="Title" class="w-full mt-6" autocomplete="off"></x-input>
 
     <x-textarea name="text" rows="10" field="text" placeholder="Start typing here..." class="w-full mt-6"></x-textarea>
     
