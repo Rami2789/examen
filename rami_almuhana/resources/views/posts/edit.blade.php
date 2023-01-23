@@ -13,10 +13,19 @@
                     @csrf
                     <x-input
                         type="text"
+                        name="author"
+                        field="author"
+                        placeholder="author"
+                        class="w-full"
+                        autocomplete="off"
+                        :value="@old('author', $post->author)"></x-input>
+
+                    <x-input
+                        type="text"
                         name="title"
                         field="title"
                         placeholder="Title"
-                        class="w-full"
+                        class="w-full mt-6"
                         autocomplete="off"
                         :value="@old('title', $post->title)"></x-input>
 
