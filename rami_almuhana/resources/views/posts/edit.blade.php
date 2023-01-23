@@ -11,14 +11,6 @@
                 <form action="{{ route('posts.update', $post) }}" method="post">
                     @method('put')
                     @csrf
-                    <x-input
-                        type="text"
-                        name="author"
-                        field="author"
-                        placeholder="author"
-                        class="w-full"
-                        autocomplete="off"
-                        :value="@old('author', $post->author)"></x-input>
 
                     <x-input
                         type="text"

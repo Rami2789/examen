@@ -16,17 +16,23 @@
                 <strong>Updated at: </strong> {{ $post->updated_at->diffForHumans() }}
                 </p>
                 <a href="{{ route('posts.edit', $post) }}" class="btn-link ml-auto">Edit Post</a>
+                <form action="{{ route('posts.destroy', $post) }}" method="post">
+        @method('delete')
+        @csrf
+        <button type="submit" class="btn btn-danger ml-4" onclick="return confirm('Are you sure you wish to delete this post?')">Delete Post</button>
+    </form>
+
             </div>
 
 
 <div class="my-6 p-6 bg-white border-b border-gray-200 shadow-sm sm:rounded-lg">
                 <h1 class="font-bold text-3xl">
-                    {{ $post->author }}
+                    {{ Auth::user()->name }}
                 </h1>
                 <h2 class="font-bold text-2xl">
                     {{ $post->title }}
                 </h2>
-                <p class="mt-6 whitespace-pre-wrap">
+                <p class="mt-6">
                     {{ $post->text }}
                 </p>
             </div>
